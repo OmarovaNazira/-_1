@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from online_shop.models import Category, Product
+from todo_app.models import Category, Product
 
 class CategorySerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
