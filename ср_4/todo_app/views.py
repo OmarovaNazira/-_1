@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from online_shop.models import Category, Product
-from online_shop.serializers import CategorySerializer, ProductSerializer
+from todo_app.models import Category, Product
+from todo_app.serializers import CategorySerializer, ProductSerializer
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 import json
@@ -9,15 +9,15 @@ from lecture_5.settings import STATIC_URL
 
 def home_page(request):
     categories = Category.objects.all()
-    return render(request, 'online_shop/index.html', {'STATIC_URL': STATIC_URL, 'categories': categories})
+    return render(request, 'todo_app/index.html', {'STATIC_URL': STATIC_URL, 'categories': categories})
 
 def about_page(request):
-    return render(request, 'online_shop/about.html')
+    return render(request, 'todo_app/about.html')
 
 
 def category_page(request, pk):
     category = Category.objects.get(id=pk)
-    return render(request, 'online_shop/category.html', {'STATIC_URL': STATIC_URL, 'category': category})
+    return render(request, 'todo_app/category.html', {'STATIC_URL': STATIC_URL, 'category': category})
 
 @csrf_exempt
 def categories_handler(request):
