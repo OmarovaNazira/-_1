@@ -1,5 +1,5 @@
 from django.contrib import admin
-from online_shop.models import Category, Product
+from todo_app.models import Category, Product
 # Register your models here.
 
 admin.site.register(Category)
